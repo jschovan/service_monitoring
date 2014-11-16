@@ -129,7 +129,7 @@ class Scraper(object):
     
     def save_visited_urls(self):
         file_visited_urls = join(abspath(dirname(self.PAGE_CONTENT_DIRECTORY)), \
-                    'visited_urls.json', datetime.utcnow().strftime('%F.%H%M%S'))
+                    'visited_urls-' + datetime.utcnow().strftime('%F.%H%M%S') + '.json')
         f = open(file_visited_urls, 'w')
         f.write(json.dumps(self.URLS_LIST, indent=2, sort_keys=True))
         f.close()
