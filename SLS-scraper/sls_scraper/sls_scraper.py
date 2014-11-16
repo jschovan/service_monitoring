@@ -12,7 +12,7 @@ from os.path import join, pardir, abspath, dirname, split
 from BeautifulSoup import BeautifulSoup
 
 
-class Scraper(object):
+class SLSScraper(object):
     CONFIG_FILE = join(abspath(dirname(__file__)), 'settings', 'settings-sls.cfg')
     
     def __init__(self, config_file=None):
@@ -131,7 +131,7 @@ class Scraper(object):
         file_visited_urls = join(abspath(dirname(self.PAGE_CONTENT_DIRECTORY)), \
                     'visited_urls-' + datetime.utcnow().strftime('%F.%H%M%S') + '.json')
         f = open(file_visited_urls, 'w')
-        f.write(json.dumps(self.URLS_LIST, indent=2, sort_keys=True))
+        f.write(json.dumps(self.URLS, indent=2, sort_keys=True))
         f.close()
     
 
@@ -143,13 +143,10 @@ class Scraper(object):
 
 if __name__ == '__main__':
     args = sys.argv[1:]
-    print ':66'
     if len(args) == 1:
-        scraper = Scraper(args[0])
+        scraper = SLSScraper(args[0])
     else:
-        scraper = Scraper()
-    print ':71'
+        scraper = SLSScraper()
     scraper.run()
-    print ':73'
 
 
