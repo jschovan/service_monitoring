@@ -63,11 +63,11 @@ sls\_scraper/settings/settings-sls.cfg.
 How to run
 -----
   ```
-# cd sls\_scraper/
+# cd sls_scraper/
 # ls
-__init__.py  README.md  settings  sls\_scraper.py
+__init__.py  README.md  settings  sls_scraper.py
 # export PYTHONPATH=$PWD:$PYTHONPATH
-# python sls\_scraper.py
+# python sls_scraper.py
   ```
 
 
